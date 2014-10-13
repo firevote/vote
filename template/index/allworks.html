@@ -1,0 +1,55 @@
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>
+                Project
+            </th>
+            <th>
+                Client
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                View
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                Nike.com Redesign
+            </td>
+            <td>
+                Monsters Inc
+            </td>
+            <td>
+                New Task
+            </td>
+            <td>
+                4 days ago
+            </td>
+            <td>
+                <a href="#" class="view-link">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" >
+    seajs.config({
+        alias : {
+            'allworks' : 'index/allworks'
+        },
+        preload : [ 'allworks' ],
+        debug : 0
+        // 0: 只输出少量信息 1：输出大量信息 2：对已加载的文件不进行                                           缓存
+    });
+    seajs.use('index/allworks', function(allworks){
+        allworks.init();
+    });
+</script>

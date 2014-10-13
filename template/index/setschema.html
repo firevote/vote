@@ -1,0 +1,16 @@
+<div>
+    set Schema
+</div>
+<script type="text/javascript" >
+    seajs.config({
+        alias : {
+            'setschema' : 'index/setschema'
+        },
+        preload : [ 'setschema' ],
+        debug : 0
+        // 0: 只输出少量信息 1：输出大量信息 2：对已加载的文件不进行                                           缓存
+    });
+    seajs.use('index/setschema', function(setschema){
+        setschema.init();
+    });
+</script>

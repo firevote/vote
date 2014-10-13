@@ -1,0 +1,205 @@
+*{
+	margin:0;
+	padding:0;
+}
+.dropdownbox{
+	position:relative;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+
+.jqsc_box{
+	position:absolute;
+	left:0px;
+}
+/*--------jqsc_top
+------------------------------------------------------------------------*/
+.jqsc_top{
+	position:relative;
+	height:3px;
+	line-height:0;
+	font-size:0;
+	margin:0 3px;
+}
+.jqsc_topcent{
+	height:3px;
+	background:url(../images/jqsc_topcent.png) left top repeat-x;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="themes/orange/images/jqsc_topcent.png", sizingMethod="scale");
+}
+.jqsc_topleft{
+	position:absolute;
+	top:0;
+	left:-3px;
+	width:3px;
+	height:3px;
+	background:url(../images/jqsc_topleft.png) no-repeat;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="themes/orange/images/jqsc_topleft.png", sizingMethod="scale");
+}
+.jqsc_topright{
+	position:absolute;
+	top:0;
+	right:-3px;
+	width:3px;
+	height:3px;
+	background:url(../images/jqsc_topright.png) left top no-repeat;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="themes/orange/images/jqsc_topright.png", sizingMethod="scale");
+}
+
+/*--------jqsc_bot
+------------------------------------------------------------------------*/
+.jqsc_bot{
+	position:relative;
+	height:3px;
+	line-height:0;
+	font-size:0;
+	margin:0 3px;
+}
+.jqsc_botcent{
+	height:3px;
+	background:url(../images/jqsc_botcent.png) left top repeat-x;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="themes/orange/images/jqsc_botcent.png", sizingMethod="scale");
+}
+.jqsc_botleft{
+	position:absolute;
+	bottom:0;
+	left:-3px;
+	width:3px;
+	height:3px;
+	background:url(../images/jqsc_botleft.png) no-repeat;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="themes/orange/images/jqsc_botleft.png", sizingMethod="scale");
+}
+.jqsc_botright{
+	position:absolute;
+	bottom:0;
+	right:-3px;
+	width:3px;
+	height:3px;
+	background:url(../images/jqsc_botright.png) left top no-repeat;
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="themes/orange/images/jqsc_botright.png", sizingMethod="scale");
+}
+
+/*--------jqsc_cent
+------------------------------------------------------------------------*/
+.jqsc_cent{
+	border-left:1px solid #999;
+	border-right:1px solid #999;
+	padding:0 2px;
+}
+.jqsc_font{
+	overflow:scroll;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.jqsc_list{
+	list-style:none;
+	margin:0;
+	padding:0;
+	overflow:scroll;
+	overflow-x:hidden;
+	overflow-y:auto;
+	max-height:100px;
+}
+.jqsc_list li{
+	list-style:none;
+	margin:0;
+	*margin-left:-16px;
+	height:24px;
+	line-height:24px;
+	padding:0 6px;
+	background:#fff;
+	color:#666;
+	border-bottom:1px solid #f6f6f6;
+	cursor:pointer;
+}
+.jqsc_list li.hov{
+	background:#f4f4f4;
+	color:#333;
+}
+.jqsc_list li.current{
+	color:#fff;
+	background:#a9a9a9;
+}
+/*---------------------Button
+-----------------------------------------------------------------------------*/
+
+
+.select_the_radio{
+	margin: 0px;
+	padding:0px;
+}
+.select_the_radio span{
+	margin:0px;
+	padding:0px;
+	padding-left:10px;
+	line-height:26px;
+	font-size:14px;
+}
+.select_the_radio span .select_list_con, .select_the_radio span .select_list_con2{
+	text-align:left;
+	padding-left:6px;
+	padding-right:6px;
+	margin:0 -10px;
+	color:#666;
+	height:26px;
+	overflow:hidden;
+	font-size:14px;
+	border:1px solid #999999;
+}
+.select_the_radio span .select_list_arrow, .select_the_radio span .select_list_arrow2{
+	width:20px;
+	height:26px;
+	margin:0px;
+	padding:0px;
+}
+ 
+.select_the_radio input{
+	vertical-align:bottom;
+	border:none;
+	margin:0px;
+	padding:0px;
+	font-size:13px;
+}
+.select_list_con{
+	border:1px solid #999999;
+	border-right:none;
+	border-radius:3px 0 0 3px;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff),color-stop(0.20, #ffffff),to(#dedede));
+	box-shadow:inset 0 0 3px #fff;
+}
+.select_list_con2{
+	border:1px solid #999999;
+	border-right:none;
+	border-radius:3px 0 0 3px;
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff),to(#efefef));
+	box-shadow:inset 0 0 3px #fff;
+}
+.select_list_arrow{
+	width:20px;
+	height:26px;
+	background:url(../images/list_arrow.png) no-repeat;
+	vertical-align:bottom;
+	border:none;
+}
+.select_list_arrow2{
+	width:20px;
+	height:26px;
+	background:url(../images/list_arrow2.png) no-repeat;
+	vertical-align:bottom;
+	border:none;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	

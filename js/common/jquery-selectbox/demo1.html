@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jquery下拉框插件</title>
+<link href="themes/default/css/list_style.css" rel="stylesheet" type="text/css" />
+<link href="themes/blue/css/list_style.css" rel="stylesheet" type="text/css" />
+<link href="themes/green/css/list_style.css" rel="stylesheet" type="text/css" />
+<link href="themes/orange/css/list_style.css" rel="stylesheet" type="text/css" />
+<script src="./js/jquery-1.10.2.js"></script>
+<script src="./js/selectbox.js"></script>
+<script type="text/javascript">
+
+/**
+ * 下拉框jquery插件
+ * 使用方法
+ *	创建一个下了框
+ *	$('#id').dropdown({
+ *		//下拉框方向          参数可选'up'和'down'
+ *		direction : 'down',
+ *		// 组件宽
+ *		width : 120,
+ *		// 下拉框高度
+ *		height : 150,
+ *		// 组件之间的间距（右边距）
+ *		space : 25,
+ * 		// 缺省显示选项
+ *		value : '',
+ *		// 下拉表项数组
+ *		dataSource : {},
+ *		// 组件样式          参数可选'green', 'blue', 'orange', 'default' 默认为default
+ *		style : 'default',
+ *		// 点击选项后的事件
+ *		change : function(key, value) {
+ *		}
+ *	});
+ *
+ *  返回当前选中的值
+ *	$('#id').dropdown('currentValue')
+ *
+ */
+        $().ready(function() {
+            
+            $('#test1').dropdown({
+            	dataSource: item1,
+                value: "00",
+                width: 180,
+                height: 250,
+				space: 40,
+				direction: 'down',
+                change: function(key, value){
+					alert(value);
+    			}
+            });
+
+            $('#test2').dropdown({
+            	dataSource: item2,
+                value: "00",
+                width: 180,
+                height: 120,
+				space: 20,
+				style: 'green',
+				direction: 'down',
+                change: function(key, value){
+					alert(key);
+    			}
+            });
+
+            $('#test3').dropdown({
+            	dataSource: item3,
+                value: "00",
+                width: 180,
+                height: 250,
+				space: 40,
+				style: 'orange',
+                change: changeshape
+            });
+
+            $('#test4').dropdown({
+            	dataSource: item4,
+                value: "00",
+                width: 140,
+                height: 150,
+				space: 40,
+				style: 'blue',
+				direction: 'down',
+                change: changedirection
+            });
+
+            $('#test5').dropdown({
+            	dataSource: item5,
+                value: "00",
+                width: 190,
+                height: 950,
+    			space: 40,
+                change: changecolor
+            });			
+        });
+
+        var item1 = new Array();
+        item1["弹出年级value"] = "00";
+        item1["一年级"] = "01";
+        item1["二年级"] = "02";
+        item1["三年级"] = "03";
+        item1["四年级"] = "04";
+        item1["五年级"] = "05";
+        item1["六年级"] = "06";
+        item1["初一"] = "07";
+        item1["初二"] = "08";
+        item1["初三"] = "09";
+        item1["高一"] = "10";
+        item1["高二"] = "11";
+        item1["高三"] = "12";
+
+        var item2 = new Array();
+        item2["弹出学科key"] = "00";
+        item2["语文"] = "01";
+        item2["数学"] = "02";
+        item2["科学"] = "03";
+        item2["英语"] = "04";
+        item2["历史与社会"] = "05";
+        item2["思想品德"] = "06";
+        item2["体育与健康"] = "07";
+
+        var item3 = new Array();
+        item3["点我变大小"] = "00"
+        item3["宽"] = "01";
+        item3["窄"] = "02";
+        item3["长"] = "03";
+        item3["短"] = "04";
+        item3["无效选项1"] = "05";
+        item3["无效选项2"] = "06";
+        item3["无效选项3"] = "07";
+        item3["无效选项4"] = "08";
+        item3["无效选项5"] = "09";
+        item3["无效选项6"] = "10";
+  
+
+        var item4 = new Array();
+        item4["点我选方向"] = "00"
+        item4["上"] = "01";
+        item4["下"] = "02";
+
+        var item5 = new Array();
+        item5["点我变颜色"] = "00";
+        item5["绿色"] = "01";
+        item5["蓝色"] = "02";
+        item5["橙色"] = "03";
+        item5["灰色"] = "04";
+
+        function changeshape(key,value){
+			if(value == "01"){
+				$('#test3').dropdown({
+	            	dataSource: item3,
+	                value: "01",
+	                width: 250,
+	                height: 180,
+					space: 40,
+					style: 'orange',
+	                change: changeshape
+	            });
+			}
+			else if(value == "02"){
+				$('#test3').dropdown({
+	            	dataSource: item3,
+	                value: "02",
+	                width: 120,
+	                height: 180,
+					space: 40,
+					style: 'orange',
+	                change: changeshape
+	            });
+			}
+			else if(value == "03"){
+				$('#test3').dropdown({
+	            	dataSource: item3,
+	                value: "03",
+	                width: 120,
+	                height: 250,
+					space: 40,
+					style: 'orange',
+	                change: changeshape
+	            });
+			}
+			else if(value == "04"){
+				$('#test3').dropdown({
+	            	dataSource: item3,
+	                value: "04",
+	                width: 120,
+	                height: 120,
+					space: 40,
+					style: 'orange',
+	                change: changeshape
+	            });
+			}
+
+        }
+		
+        function changedirection(key, value){
+        	if(value=="01"){
+            	$('#test4').dropdown({
+            		dataSource: item4,
+                    value: "01",
+                    width: 140,
+                    height: 150,
+    				space: 40,
+    				style: 'blue',
+    				direction: 'up',
+                    change: changedirection
+                });
+            }
+            else if(value=="02"){
+            	$('#test4').dropdown({
+            		dataSource: item4,
+                    value: "02",
+                    width: 140,
+                    height: 150,
+    				space: 40,
+    				style: 'blue',
+    				direction: 'down',
+                    change: changedirection
+                });
+            }
+        }
+        
+        function changecolor(key, value){
+            if(value=="01"){
+            	$('#test5').dropdown({
+                	dataSource: item5,
+                    value: "01",
+                    width: 190,
+                    height: 950,
+    				space: 40,
+    				style: 'green',
+                    change: changecolor
+                });
+            }
+            else if(value=="02"){
+            	$('#test5').dropdown({
+                	dataSource: item5,
+                    value: "02",
+                    width: 190,
+                    height: 950,
+    				space: 40,
+    				style: 'blue',
+                    change: changecolor
+                });
+            }
+            else if(value=="03"){
+            	$('#test5').dropdown({
+                	dataSource: item5,
+                    value: "03",
+                    width: 190,
+                    height: 950,
+    				space: 40,
+    				style: 'orange',
+                    change: changecolor
+                });
+            }
+            else if(value=="04"){
+            	$('#test5').dropdown({
+                	dataSource: item5,
+                    value: "04",
+                    width: 190,
+                    height: 950,
+    				space: 40,
+    				style: '',
+                    change: changecolor
+                });
+            }
+        }
+
+        function test(){
+			alert($('#test5').dropdown('currentValue'));
+        }
+        
+
+</script>
+</head>
+
+<body>
+	
+	<div id="test1"></div>
+	<div id="test2"></div>
+	<div id="test3"  style="position:absolute;top:300px;left:100px"></div>
+	<div id="test4" style="position:absolute;top:200px;left:300px"></div>
+	<div id="test5" style="position:absolute;top:200px;left:500px"></div>
+	<input type="button" onclick="test()" style="width: 200px, height: 50px" value="取得当前颜色选框的value"></input>
+	
+<!-- 
+	<div class="dropdownbox">
+	<div class="select_the_radio" style="width:250px;">
+		<span><input style="width:200px;"type="button" value="默认" class="select_list_con" onMouseDown="this.className='select_list_con2'" onmouseout="this.className='select_list_con'"/><input type="button" value="" class="select_list_arrow" onMouseDown="this.className='select_list_arrow2'" onmouseout="this.className='select_list_arrow'"/></span>
+	</div>
+
+	<div class="jqsc_box" style="width:210px; font-size:14px; color:#666; top:28px;">
+		<div class="jqsc_top">
+			<div class="jqsc_topleft"></div>
+			<div class="jqsc_topcent"></div>
+			<div class="jqsc_topright"></div>
+		</div>
+		<div class="jqsc_cent">
+			<ul class="jqsc_list" style="max-height: 200px;">
+				<li class="current">一年级</li>
+				<li options_value="01" class="current" onmousemove="this.className='hov'" onmousedown="this.className='current'">一年级</li>
+				<li options_value="01" onmousemove="this.className='hov'" onmousedown="this.className='current'" onmouseout="this.className=''">一年级</li>
+				<li options_value="01" onmousemove="this.className='hov'" onmousedown="this.className='current'" onmouseout="this.className=''">一年级</li>
+			</ul>
+		</div>
+		<div class="jqsc_bot">
+			<div class="jqsc_botleft"></div>
+			<div class="jqsc_botcent"></div>
+			<div class="jqsc_botright"></div>
+		</div>
+	</div>
+</div>
+ -->
+
+</body>
+</html>

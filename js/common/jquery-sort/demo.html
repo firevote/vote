@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="./themes/default/css/sort.css" rel="stylesheet"
+	type="text/css" />
+<script src="./js/jquery-1.10.2.js"></script>
+<script src="./js/sort.js"></script>
+<script type="text/javascript">
+/**
+ * 排序jquery插件
+ * 使用方法
+ *	创建一个排序插件
+ *	$('#id').sort({
+ *   	dataSource : 
+ *		change : function(key, value) {
+ *		}
+ *	});
+ *
+ *  返回当前选中的值
+ *	$('#id').dropdown('currentValue')
+ *
+ */
+        $().ready(function() {
+            var item = new Array();
+            item[0] = new sortdata('默认',"",'addedTime desc, gradeId asc');
+            item[1] = new sortdata('年级','gradeId','desc');
+            item[2] = new sortdata('册别','volumn','asc');
+            item[3] = new sortdata('上架时间','addedTime','desc');
+            item[4] = new sortdata('价格','curPrice','asc');
+            item[5] = new sortdata('学科','subject','asc');
+            item[6] = new sortdata('标题','CONVERT( title USING gbk ) COLLATE gbk_chinese_ci','asc');
+            //console.log(item);
+            
+            $('#sort2').sort({
+				dataSource : item,
+				value : "subject asc",
+				click : function(value){
+					alert(value);
+            	}
+            });	            
+        });
+        function test(){
+        	alert($('#sort2').sort("currentValue"));
+        }		
+
+</script>
+</head>
+<body>
+<div id="sort2"></div>
+<input type="button" onclick="test()" style="width: 200px, height: 50px" value="取得当前排序的value"></input>
+</body>
+</html>

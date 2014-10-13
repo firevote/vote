@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html lang="en" class="ie6 ielt7 ielt8 ielt9"><![endif]--><!--[if IE 7 ]>
+<html lang="en" class="ie7 ielt8 ielt9"><![endif]--><!--[if IE 8 ]>
+<html lang="en" class="ie8 ielt9"><![endif]--><!--[if IE 9 ]>
+<html lang="en" class="ie9"> <![endif]--><!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en"><!--<![endif]-->
+<head>
+    <!-- 禁止浏览器从本地缓存中调阅页面。-->
+    <meta http-equiv="pragram" content="no-cache">
+    <!--网页不保存在缓存中，每次访问都刷新页面。-->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!--同上面意思差不多，必须重新加载页面-->
+    <meta http-equiv="expires" content="0">
+    <!--网页在缓存中的过期时间为0，一旦网页过期，必须从服务器上重新订阅-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>投票后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="themes/default/common/css/bootstrap.min.css" rel="stylesheet">
+    <link href="themes/default/common/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="themes/default/common/css/site.css" rel="stylesheet">
+    <script src="js/common/jquery-1.11.0/jquery-1.11.0.min.js"></script>
+    <script src="js/common/bootstrap/bootstrap.min.js"></script>
+    <script src="js/common/bootstrap/site.js"></script>
+    <script src="js/common/uploadify/jquery.uploadify.min.js"></script>
+    <script type="text/javascript" src="js/sea-debug.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <!--顶部导航-->
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span
+                        class="icon-bar"></span>
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">后台</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav" >
+                        <li class="active top_nav_item">
+                            <a href="#">作品管理</a>
+                        </li>
+                        <li class="top_nav_item">
+                            <a href="#">时间设置</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!--左侧导航-->
+        <div class="span3">
+            <div class="well" style="padding: 8px 0;">
+                <ul class="nav nav-list">
+                    <li class="nav-header">
+                        作品管理
+                    </li>
+                    <li class="active left_nav_item" id="left_nav_allworks">
+                        <a href="#"><i class="icon-home"></i>概览</a>
+                    </li>
+                    <li class="left_nav_item" id="left_nav_addwork">
+                        <a href="#"><i class="icon-user"></i>添加作品</a>
+                    </li>
+
+                    <li class="nav-header">
+                        时间设置
+                    </li>
+                    <li class="left_nav_item" id="left_nav_viewschema">
+                        <a href="#"><i class="icon-user"></i>查看</a>
+                    </li>
+                    <li class="left_nav_item" id="left_nav_setschema">
+                        <a href="#"><i class="icon-user"></i>设置</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 内容区 -->
+        <div class="span9" id="reg_content">
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    seajs.config({
+        alias : {
+        },
+        preload : [ ],
+        debug : 0
+        // 0: 只输出少量信息 1：输出大量信息 2：对已加载的文件不进行缓存
+    });
+    seajs.use('index/index', function(index){
+        index.init();
+    });
+</script>
+</body>
+</html>
