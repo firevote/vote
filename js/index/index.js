@@ -7,9 +7,7 @@ define(function(require,exports,module) {
     function init() {
         bindEvent();
         //loadAllWorks();
-        //loadAddWork();
-        //loadSchema();
-        loadSchemaSetting();
+        loadRewardItem();
     }
 
     function bindEvent() {
@@ -39,6 +37,22 @@ define(function(require,exports,module) {
             loadSchemaSetting();
         });
 
+        $('#left_nav_account').bind('click',function() {
+            loadUpdateAccountView();
+        });
+
+        $('#left_nav_reward_item').bind('click',function() {
+            loadRewardItem();
+        });
+
+        $('#left_nav_result_view').bind('click',function() {
+            loadResultView();
+        });
+
+        $('#left_nav_result_set').bind('click',function() {
+            loadResultSet();
+        });
+
         $('#top_nav_work').bind('click',function(){
             $('#left_nav_allworks').trigger('click');
         });
@@ -46,6 +60,15 @@ define(function(require,exports,module) {
         $('#top_nav_schema').bind('click',function(){
             $('#left_nav_viewschema').trigger('click');
         });
+
+        $('#top_nav_account').bind('click',function(){
+            $('#left_nav_account').trigger('click');
+        });
+
+        $('#top_nav_result').bind('click',function(){
+            $('#left_nav_result_view').trigger('click');
+        });
+
     }
 
     function loadAllWorks(){
@@ -62,6 +85,22 @@ define(function(require,exports,module) {
 
     function loadSchemaSetting() {
         $('#reg_content').load('./index.php?c=main&a=setschema');
+    }
+
+    function loadUpdateAccountView() {
+        $('#reg_content').load('./index.php?c=main&a=update_account_view');
+    }
+
+    function loadRewardItem() {
+        $('#reg_content').load('./index.php?c=main&a=reward_item');
+    }
+
+    function loadResultView() {
+        $('#reg_content').load('./index.php?c=main&a=result_view');
+    }
+
+    function loadResultSet() {
+        $('#reg_content').load('./index.php?c=main&a=result_set');
     }
 
     exports.init = init;

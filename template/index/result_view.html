@@ -1,0 +1,16 @@
+<div>
+    result_view
+</div>
+<script type="text/javascript" >
+    seajs.config({
+        alias : {
+            'result_view' : 'index/result_view'
+        },
+        preload : [ 'result_view' ],
+        debug : 0
+        // 0: 只输出少量信息 1：输出大量信息 2：对已加载的文件不进行                                           缓存
+    });
+    seajs.use('index/result_view', function(result_view){
+        result_view.init();
+    });
+</script>

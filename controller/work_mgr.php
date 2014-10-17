@@ -11,9 +11,46 @@ require_once INCLUDE_PATH.'common.php';
 
 class work_mgr extends spController
 {
-    function update_schema() {
+    function get_reward_item() {
 
-        echo json_encode($_POST);
+    }
+
+    function change_password() {
+        $now_password = $_POST['now_password'];
+        $new_password = $_POST['new_password'];
+        $account_item = spClass('user_account')->find(array('account'=>'admin'));
+        $retArr = array('status'=>-1);
+        if($account_item['password'] != $now_password) {
+            echo json_encode($retArr);
+            return;
+        }
+        $updateRet = spClass('user_account')->update(array('account'=>'admin'),array('password'=>$new_password));
+
+        if($updateRet) {
+            $retArr['status'] = 0;
+        } else {
+            $retArr['status'] = -1;
+        }
+        echo json_encode($retArr);
+    }
+
+    function update_schema() {
+        $argsArr = $_POST;
+
+        $ret = true;
+
+        for($i=1;$i<=count($argsArr)/2;$i++) {
+            $competition_item = spClass('competition')->update(array('cpt_index'=>$i),array('cpt_start_time'=>$argsArr['s'.$i.'_start'],'cpt_end_time'=>$argsArr['s'.$i.'_end']));
+            $ret = $ret && $competition_item;
+        }
+
+        if($ret) {
+            $retArr = array('status'=>0);
+            echo json_encode($retArr);
+        }else {
+            $retArr = array('status'=>-1);
+            echo json_encode($retArr);
+        }
     }
 
     function view_schema() {
@@ -67,11 +104,17 @@ class work_mgr extends spController
 
         $dret3 = true;
         if($work_detail_item['detail_image_iid'] != '') {
+            $res_image_item = spClass('res_upload')->find(array('res_id'=>$work_detail_item['detail_image_iid']));
+            unlink(UPLOAD_IMAGES_PATH.$res_image_item['res_fullname']);
+
             $dret3 = spClass('res_upload')->delete(array('res_id'=>$work_detail_item['detail_image_iid']));
         }
 
         $dret4 = true;
         if($work_detail_item['detail_zip_iid'] != '') {
+            $res_zip_item = spClass('res_upload')->find(array('res_id'=>$work_detail_item['detail_zip_iid']));
+            unlink(UPLOAD_ZIPS_PATH.$res_zip_item['res_fullname']);
+
             $dret4 = spClass('res_upload')->delete(array('res_id'=>$work_detail_item['detail_zip_iid']));
         }
 

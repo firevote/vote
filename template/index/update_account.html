@@ -1,0 +1,44 @@
+<style type="text/css">
+    .control-group label{
+        width: 150px;
+        display: inline-block;
+        text-align: right;
+    }
+
+    .control-group input{
+        margin-top: 8px;
+    }
+
+</style>
+<div>
+    <div class="control-group">
+        <label class="control-label" for="info_now_password" >原始密码：</label>
+        <input type="password" class="input-xlarge" id="info_now_password" />
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="info_new_password">新密码：</label>
+        <input type="password" class="input-xlarge" id="info_new_password" />
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="info_password_confirm">确认新密码：</label>
+        <input type="password" class="input-xlarge" id="info_password_confirm" />
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary" id="update_ok">修改</button>
+        <button class="btn" id="update_cancel">清空</button>
+    </div>
+</div>
+<script type="text/javascript" >
+    seajs.config({
+        alias : {
+            'update_account' : 'index/update_account'
+        },
+        preload : [ 'update_account' ],
+        debug : 0
+        // 0: 只输出少量信息 1：输出大量信息 2：对已加载的文件不进行                                           缓存
+    });
+    seajs.use('index/update_account', function(update_account){
+        update_account.init();
+    });
+</script>

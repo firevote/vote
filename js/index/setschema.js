@@ -33,6 +33,7 @@ define(function(require,exports,module){
 
             commUtils.doAjaxPost('./index.php?c=work_mgr&a=update_schema',postArgs).done(function(ret) {
                 console.log(ret);
+                $('#left_nav_viewschema').trigger('click');
             });
         });
     }
