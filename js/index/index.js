@@ -7,7 +7,9 @@ define(function(require,exports,module) {
     function init() {
         bindEvent();
         //loadAllWorks();
-        loadAddWork();
+        //loadAddWork();
+        //loadSchema();
+        loadSchemaSetting();
     }
 
     function bindEvent() {
@@ -30,11 +32,19 @@ define(function(require,exports,module) {
         });
 
         $('#left_nav_viewschema').bind('click',function() {
-            $('#reg_content').load('./index.php?c=main&a=viewschema');
+            loadSchema();
         });
 
         $('#left_nav_setschema').bind('click',function(){
-            $('#reg_content').load('./index.php?c=main&a=setschema');
+            loadSchemaSetting();
+        });
+
+        $('#top_nav_work').bind('click',function(){
+            $('#left_nav_allworks').trigger('click');
+        });
+
+        $('#top_nav_schema').bind('click',function(){
+            $('#left_nav_viewschema').trigger('click');
         });
     }
 
@@ -44,6 +54,14 @@ define(function(require,exports,module) {
 
     function loadAddWork() {
         $('#reg_content').load('./index.php?c=main&a=addwork');
+    }
+
+    function loadSchema() {
+        $('#reg_content').load('./index.php?c=main&a=viewschema');
+    }
+
+    function loadSchemaSetting() {
+        $('#reg_content').load('./index.php?c=main&a=setschema');
     }
 
     exports.init = init;

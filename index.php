@@ -5,6 +5,11 @@ define("APP_PATH",dirname(__FILE__));
 // sp框架目录，SpeedPHP 目录所在位置
 define("SP_PATH",dirname(__FILE__).'/SpeedPHP');
 
+define("UPLOAD_IMAGES_PATH",dirname(__FILE__).'/upload/images/');
+define("UPLOAD_ZIPS_PATH",dirname(__FILE__).'/upload/zips/');
+define("INCLUDE_PATH",dirname(__FILE__).'/include/');
+
+
 // 应用程序配置
 $spConfig = array(
     'default_controller' => 'main', // 默认控制器名称
@@ -16,7 +21,7 @@ $spConfig = array(
         'host'=>'localhost',
         'login'=>'root',
         'password'=>'111111',
-        'database'=>'test'
+        'database'=>'ifly_vote'
     ),
 
     // 视图配置

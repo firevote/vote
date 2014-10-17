@@ -1,12 +1,12 @@
 <?php
 
-//require_once APP_PATH.'/model/ado_fb_res.php';
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_WARNING);
 
 class main extends spController
 {
     function index()
     {
-        $this->display('index/index.html');
+        $this->display('index/admin.html');
     }
 
     function allworks(){
@@ -23,14 +23,5 @@ class main extends spController
 
     function setschema() {
         $this->display('index/setschema.html');
-    }
-
-
-
-
-
-    function test()
-    {
-
     }
 }

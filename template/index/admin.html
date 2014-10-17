@@ -16,13 +16,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>投票后台</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="js/common/ajaxfileupload/ajaxfileupload.css" rel="stylesheet">
     <link href="themes/default/common/css/bootstrap.min.css" rel="stylesheet">
     <link href="themes/default/common/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="themes/default/common/css/site.css" rel="stylesheet">
+    <link href="js/common/datepicker/datepicker.css" rel="stylesheet">
+
     <script src="js/common/jquery-1.11.0/jquery-1.11.0.min.js"></script>
     <script src="js/common/bootstrap/bootstrap.min.js"></script>
     <script src="js/common/bootstrap/site.js"></script>
-    <script src="js/common/uploadify/jquery.uploadify.min.js"></script>
+    <script src="js/common/ajaxfileupload/ajaxfileupload.js"></script>
+    <script src="js/common/datepicker/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/sea-debug.js"></script>
 </head>
 <body>
@@ -37,11 +42,11 @@
 
                 <div class="nav-collapse">
                     <ul class="nav" >
-                        <li class="active top_nav_item">
+                        <li class="active top_nav_item" id="top_nav_work">
                             <a href="#">作品管理</a>
                         </li>
-                        <li class="top_nav_item">
-                            <a href="#">时间设置</a>
+                        <li class="top_nav_item" id="top_nav_schema">
+                            <a href="#">时间轴管理</a>
                         </li>
                     </ul>
                 </div>
@@ -57,20 +62,20 @@
                         作品管理
                     </li>
                     <li class="active left_nav_item" id="left_nav_allworks">
-                        <a href="#"><i class="icon-home"></i>概览</a>
+                        <a href="#"><i class="icon-home"></i>作品概览</a>
                     </li>
                     <li class="left_nav_item" id="left_nav_addwork">
                         <a href="#"><i class="icon-user"></i>添加作品</a>
                     </li>
 
                     <li class="nav-header">
-                        时间设置
+                        时间轴管理
                     </li>
                     <li class="left_nav_item" id="left_nav_viewschema">
-                        <a href="#"><i class="icon-user"></i>查看</a>
+                        <a href="#"><i class="icon-user"></i>查看时间轴</a>
                     </li>
                     <li class="left_nav_item" id="left_nav_setschema">
-                        <a href="#"><i class="icon-user"></i>设置</a>
+                        <a href="#"><i class="icon-user"></i>设置时间轴</a>
                     </li>
                 </ul>
             </div>
@@ -78,10 +83,10 @@
 
         <!-- 内容区 -->
         <div class="span9" id="reg_content">
-
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
     seajs.config({
         alias : {

@@ -1,5 +1,92 @@
-<div>
-    set Schema
+<style type="text/css">
+    .schema_panel_item {
+        margin-bottom: 30px;
+    }
+    .schema_panel_item span {
+        line-height: 30px;
+        margin-left: 20px;
+        color: orangered;
+    }
+    .scheme_name {
+        margin-left: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<div id="set_schema_panel" style="display: none;">
+    <div class="schema_panel_item">
+        <div class="scheme_name" id="schema_name_1">作品收集</div>
+        <span>开始时间</span>
+        <div class="input-append date" id="dp_1_start" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <span>结束时间</span>
+        <div class="input-append date" id="dp_1_end" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+    </div>
+
+    <div class="schema_panel_item" >
+        <div class="scheme_name" id="schema_name_2">作品收集</div>
+        <span>开始时间</span>
+        <div class="input-append date" id="dp_2_start" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <span>结束时间</span>
+        <div class="input-append date" id="dp_2_end" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+    </div>
+
+    <div class="schema_panel_item">
+        <div class="scheme_name" id="schema_name_3">作品收集</div>
+        <span>开始时间</span>
+        <div class="input-append date" id="dp_3_start" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <span>结束时间</span>
+        <div class="input-append date" id="dp_3_end" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+    </div>
+
+    <div class="schema_panel_item">
+        <div class="scheme_name" id="schema_name_4">作品收集</div>
+        <span>开始时间</span>
+        <div class="input-append date" id="dp_4_start" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <span>结束时间</span>
+        <div class="input-append date" id="dp_4_end" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+    </div>
+
+    <div class="schema_panel_item" >
+        <div class="scheme_name" id="schema_name_5">作品收集</div>
+        <span>开始时间</span>
+        <div class="input-append date" id="dp_5_start" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <span>结束时间</span>
+        <div class="input-append date" id="dp_5_end" data-date="2014-10-14" data-date-format="yyyy-mm-dd" style="display: inline;">
+            <input class="span2" size="16" type="text" value="2014-10-14" readonly>
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary" id="btn_schema_confirm">提交修改</button>
+    </div>
 </div>
 <script type="text/javascript" >
     seajs.config({
