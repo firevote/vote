@@ -1,6 +1,93 @@
+<style type="text/css">
+    .control-group label{
+        width: 150px;
+        display: inline-block;
+        text-align: right;
+    }
+
+    .control-group p{
+        margin-top: 8px;
+        display: inline-block;
+        width: 600px;;
+    }
+</style>
 <div>
-    result_set
+    <input type="text" class="search-query span2" placeholder="email" id="email_input_is"/>
+    <button class="btn" style="border-radius: 20px;" id="btn_email_search">搜索</button>
+
+    <hr />
+    <div id="vote_set_table" style="display: none;">
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>
+                    作者
+                </th>
+                <th>
+                    部门
+                </th>
+                <th>
+                    邮箱
+                </th>
+                <th>
+                    作品名称
+                </th>
+                <th>
+                    操作
+                </th>
+            </tr>
+            </thead>
+            <tbody id="vote_set_tbody">
+
+            </tbody>
+        </table>
+    </div>
 </div>
+<!--作品预览弹出层-->
+<div id="set_view_pop" style="display: none">
+    <!--遮罩层-->
+    <div style="width: 99.7%;height: 99.7%;position: absolute;left: 0;top:0;z-index: 99;background-color: #000000;opacity: 0.2"></div>
+    <!--弹出层主体-->
+    <div style="position: absolute;z-index: 100;top:40px;left: 15%;background-color: #f5f5f5;width: 928px;border-radius: 10px;">
+        <div class="span9" style="margin-left: 30px;margin-top: 20px;">
+
+            <div class="control-group">
+                <label class="control-label" for="set_name_view" >姓名：</label>
+                <p id="set_name_view"></p>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="set_dep_view">部门：</label>
+                <p id="set_dep_view"></p>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="set_pos_view">岗位：</label>
+                <p id="set_pos_view"></p>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="set_mail_view">邮箱：</label>
+                <p id="set_mail_view"></p>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="set_title_view">作品名称：</label>
+                <p id="set_title_view"></p>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" >设定比赛结果：</label>
+                <select id="reward_item_option">
+
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="btn_set_commit">提交</button>
+                <button type="submit" class="btn" id="btn_set_close">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript" >
     seajs.config({
         alias : {

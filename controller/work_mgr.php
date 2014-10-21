@@ -11,8 +11,119 @@ require_once INCLUDE_PATH.'common.php';
 
 class work_mgr extends spController
 {
-    function get_reward_item() {
+    function get_result_view() {
+        $retAll = $findRet = spClass('competition_result')->findSql('select * from competition_result order by reward_item_index ');
+        echo json_encode($retAll);
+    }
 
+    function update_result_set() {
+
+        $postArgs = array(
+            'work_id'=>$_POST['work_id'],
+            'work_name'=>$_POST['work_name'],
+            'work_dep'=>$_POST['work_dep'],
+            'work_pos'=>$_POST['work_pos'],
+            'work_email'=>$_POST['work_email'],
+            'work_title'=>$_POST['work_title'],
+
+            'reward_item_id'=>$_POST['reward_item_id'],
+            'reward_item_name'=>$_POST['reward_item_name'],
+            'reward_item_index'=>$_POST['reward_item_index']
+        );
+
+        $retArr = array('status'=>-1);
+
+        $findRet = spClass('competition_result')->find(array('work_id'=>$postArgs['work_id']));
+        if($findRet) {
+            $updateRet = spClass('competition_result')->update(array('work_id'=>$postArgs['work_id']),
+                array('reward_item_id'=>$postArgs['reward_item_id'],'reward_item_name'=>$postArgs['reward_item_name'],'reward_item_index'=>$postArgs['reward_item_index']));
+            if($updateRet) {
+                $retArr['status'] = 0;
+            }
+        } else {
+            $crateRet = spClass('competition_result')->create($postArgs);
+            if($crateRet) {
+                $retArr['status'] = 0;
+            }
+        }
+        echo json_encode($retArr);
+    }
+
+    function delete_result_set() {
+        $work_id = $_POST['work_id'];
+        $retArr = array('status'=>-1);
+        $ret = spClass('competition_result')->delete(array('work_id'=>$work_id));
+        if($ret) {
+            $retArr['status'] = 0;
+        }
+        echo json_encode($retArr);
+    }
+
+    function search_work_by_email() {
+        $email = $_POST['email'];
+        $retArr = spClass('works')->findSql("select * from works where email like '".$email."%'");
+        echo json_encode($retArr);
+    }
+
+    function delete_reward_item() {
+        $item_id = $_POST['item_id'];
+        $retArr = array('status'=>-1);
+        if($item_id != "") {
+            $retInfo = spClass('reward_items')->delete(array('item_id'=>$item_id));
+            if($retInfo) {
+                $retArr['status'] = 0;
+            } else {
+                $retArr['status'] = -1;
+            }
+        } else {
+            $retArr['status'] = -1;
+        }
+        echo json_encode($retArr);
+    }
+
+
+    function checkLDAP() {
+
+        dump(common::checkLDAP('wjchang@iflytek.com','chang!2342'));
+    }
+
+    function update_reward_item() {
+        $postArgs = $_POST['postArgs'];
+        $retInt = true;
+        for($i=0;$i<count($postArgs);$i++) {
+            $itemObj=$postArgs[$i];
+            if($itemObj['item_id']=="") {
+                $itemObj['item_id']=common::guid();
+                $retInt = $retInt && spClass('reward_items')->create($itemObj);
+            }
+
+            $retInt = $retInt && spClass('reward_items')->update(array('item_id'=>$itemObj['item_id']),
+                    array('item_index'=>$itemObj['item_index'],'item_name'=>$itemObj['item_name'],'item_reward'=>$itemObj['item_reward']));
+        }
+
+        $retArr = array('status'=>-1);
+        if($retInt) {
+            $retArr['status']=0;
+        }
+
+        echo json_encode($retArr);
+    }
+
+    function get_reward_item() {
+        $items = spClass('reward_items')->findSql('select * from reward_items order by item_index ');
+        echo json_encode($items);
+    }
+
+    function check_email() {
+        $email = $_POST['email'];
+
+        $retArr = array('status'=>-1);
+        $iret = spClass('works')->findCount(array('email'=>$email));
+        if($iret == 0) {
+            $retArr['status'] = 0;
+        }
+
+        echo json_encode($retArr);
     }
 
     function change_password() {

@@ -2,7 +2,7 @@
  * Created by W.J.Chang on 2014/10/13.
  */
 define(function(require,exports,module){
-
+    var commUtils = require('util/commonUtil').commUtils;
     function init() {
         bindEvent();
     }
@@ -83,32 +83,38 @@ define(function(require,exports,module){
                 return;
             }
 
-            $('#upload_loading').show();
-            $('#loading_msg').text('上传作品，请勿断网...');
+            commUtils.doAjaxPost('./index.php?c=work_mgr&a=check_email',{'email':work_mail}).done(function(ret) {
+                console.log(ret);
+                var retObj = JSON.parse(ret);
+                if(retObj['status'] == 0) {
+                    $('#upload_loading').show();
+                    $('#loading_msg').text('上传作品，请勿断网...');
 
-            $.when(uploadImageTask(),uploadZipTask()).done(function(work_images_id,work_zip_id){
-                var postArgs = {
-                    'work_name':work_name,
-                    'work_dep':work_dep,
-                    'work_pos':work_pos,
-                    'work_mail':work_mail,
-                    'work_title':work_title,
-                    'work_des':work_des,
-                    'work_images_id':work_images_id,
-                    'work_zip_id':work_zip_id
-                };
-                $.post('./index.php?c=work_mgr&a=addwork',postArgs,function(ret) {
-                    console.log(ret);
-                    $('#loading_msg').text('作品添加成功.');
-                    reset();
-                    setTimeout(function(){
-                        $('#upload_loading').hide();
-                    },1000);
-                });
+                    $.when(uploadImageTask(),uploadZipTask()).done(function(work_images_id,work_zip_id){
+                        var postArgs = {
+                            'work_name':work_name,
+                            'work_dep':work_dep,
+                            'work_pos':work_pos,
+                            'work_mail':work_mail,
+                            'work_title':work_title,
+                            'work_des':work_des,
+                            'work_images_id':work_images_id,
+                            'work_zip_id':work_zip_id
+                        };
+                        $.post('./index.php?c=work_mgr&a=addwork',postArgs,function(ret) {
+                            console.log(ret);
+                            $('#loading_msg').text('作品添加成功.');
+                            reset();
+                            setTimeout(function(){
+                                $('#upload_loading').hide();
+                            },1000);
+                        });
 
+                    });
+                } else {
+                    alert('邮箱已存在,请修改后重试!');
+                }
             });
-
-
         });
     }
 

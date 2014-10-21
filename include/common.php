@@ -30,6 +30,20 @@ class common {
 		return substr($guid, 1,36);
 	}
 
+    public static function checkLDAP($account,$password) {
+        $LDAPHOST = 'LDAP://iflytek.com/';
+        //$base_dn = 'OU=安徽中科大讯飞科技有限公司,DC=iflytek,DC=com';
+        $ldap_conn = ldap_connect($LDAPHOST) or die('can not connect to LDAP server');
+        $ret = false;
+        @ldap_bind($ldap_conn,$account,$password);
+        if(ldap_errno($ldap_conn) == 0) {
+            $ret = true;
+        }
+        ldap_unbind($ldap_conn);
+        return $ret;
+    }
+
+
     public static function get_extension($file)
     {
         $info = pathinfo($file);

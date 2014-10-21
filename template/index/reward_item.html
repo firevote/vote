@@ -7,33 +7,20 @@
 
     .control-group input{
         margin-top: 8px;
+        margin-right: 10px;
     }
 
     .star {
         color: red;
         font-size: 15px;
     }
-
-    .control-group {
-        border: 1px solid red;
-    }
 </style>
-<div>
-    <div class="control-group">
-        <label class="control-label"><span class="star">*</span>奖项：</label>
-        <input type="text" class="input-large"/>
-        <label class="control-label"><span class="star">*</span>奖品：</label>
-        <input type="text" class="input-large"/>
-        <button class="btn" style="position: relative;top: -2px;">删除</button>
-    </div>
+<div id="reward_item_panel">
 
-    <div class="control-group">
-        <label class="control-label"><span class="star">*</span>奖项：</label>
-        <input type="text" class="input-large"/>
-        <label class="control-label"><span class="star">*</span>奖品：</label>
-        <input type="text" class="input-large"/>
-        <button class="btn" style="position: relative;top: -2px;">删除</button>
-    </div>
+</div>
+<div class="form-actions">
+    <button type="submit" class="btn btn-primary" id="btn_item_add">添加奖项</button>
+    <button class="btn" id="btn_item_update">提交修改</button>
 </div>
 <script type="text/javascript" >
     seajs.config({

@@ -121,7 +121,7 @@ define(function(require,exports,module){
         }
 
         $('#work_table').show();
-        retObjData = retObj['data'];
+        var retObjData = retObj['data'];
         if(retObjData.length <= 0) {
             return;
         }

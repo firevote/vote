@@ -6,8 +6,7 @@ define(function(require,exports,module) {
 
     function init() {
         bindEvent();
-        //loadAllWorks();
-        loadRewardItem();
+        loadAllWorks();
     }
 
     function bindEvent() {
