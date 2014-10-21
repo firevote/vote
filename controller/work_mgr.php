@@ -230,8 +230,8 @@ class work_mgr extends spController
         }
 
         $dret5 = spClass('work_details')->delete(array('work_id'=>$work_id));
-
-        if($dret1 && $dret2 && $dret3 && $dret4 && $dret5) {
+        $dret6 = spClass('competition_result')->delete(array('work_id'=>$work_id));
+        if($dret1 && $dret2 && $dret3 && $dret4 && $dret5 & $dret6) {
             $ret = array('status'=>0);
             echo json_encode($ret);
         } else {
