@@ -1,0 +1,89 @@
+
+
+.label{
+    margin: 10px 0 34px 0;
+}
+.star{
+    background: url(../images/star.png) no-repeat left center;
+    color: #b5afd3;
+    font-size: 13px;
+    padding-left: 38px;
+    margin-left: 248px;
+    height: 40px;
+    line-height: 40px;
+}
+.label_img{
+    margin-left: 280px;
+}
+.product{
+    text-align:center;
+    margin-left:-15px;
+}
+.product ul li{
+    float: left;
+    margin:15px 15px;
+}
+.name p{
+    width: 220px;
+    height: 27px;
+    line-height: 27px;
+    color:#533ebc ;
+    overflow: hidden;
+}
+.name h3{
+    width: 220px;
+    height: 27px;
+    line-height: 27px;
+    color:#ab9bfa;
+    overflow: hidden;
+    font-size: 16px;
+    text-align:left;
+}
+.name p span em{
+    margin-left:5px;
+}
+.piao{
+    color:#fff;
+}
+.btn01{
+    background: url(../images/btn02.png) no-repeat 0 0;
+    width: 220px;
+    height: 47px;
+    line-height: 47px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-top:10px;
+    font-weight: bold;
+}
+.btn01:hover, .cur{
+    background: url(../images/btn01.png) no-repeat 0 0;
+    text-decoration: none;
+}
+.next{
+    text-align: center;
+    margin-top:50px;
+}
+.up{
+    background: url(../images/next.png) no-repeat 0 0;
+    width: 90px;
+    height: 34px;
+    display: inline-block;
+    line-height: 34px;
+    color: #fff;
+}
+.down{
+    background: url(../images/next.png) no-repeat 0 0;
+    width: 90px;
+    height: 34px;
+    display: inline-block;
+    line-height: 34px;
+    color: #fff;
+    margin-left: 40px;
+}
+.up:hover, .down:hover, .cur01{
+    background: url(../images/next.png) no-repeat 0 -54px;
+    text-decoration: none;
+    color: #cfc6ff;
+}

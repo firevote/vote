@@ -6,6 +6,7 @@ define(function(require,exports,module) {
 
     function init(){
         bindEvent();
+        test();
     }
 
     function bindEvent() {
@@ -34,6 +35,21 @@ define(function(require,exports,module) {
                 }
             });
         });
+    }
+
+    function test() {
+
+            var postArgs= {
+                'work_id':'21910DBB-3CE7-4B34-D6DF-5ACB183695D7',
+                'votor':"wjchang@iflytek.com",
+                'votor_password':'chang!234'
+            };
+
+            commUtils.doAjaxPost('./index.php?c=vote_mgr&a=do_vote',postArgs).done(function(ret) {
+                console.log(ret);
+            });
+
+
     }
 
     exports.init = init;

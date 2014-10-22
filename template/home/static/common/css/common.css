@@ -1,0 +1,249 @@
+@charset 'UTF-8';
+
+body{
+    background:#171133 url("../images/body_bg.jpg") no-repeat center 8px;
+}
+
+/*header*/
+.hreader_wp{
+    width:100%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1030;
+}
+.header{
+    width:100%;
+    height:56px;
+    background:url("../images/hearder_bg.jpg") no-repeat center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1030;
+}
+.header_con{
+    width:1000px;
+    margin:0 auto;
+}
+.logo{
+    display:inline-block;
+	margin-top:8px;
+	margin-right:40px;
+}
+.top_menu{
+    display:inline-block;
+}
+.top_menu li{
+    display:block;    
+    height:53px;
+    line-height:53px;
+	float:left;
+    padding-right:12px;
+    margin-right:10px;
+    background:url("../images/menu_li.jpg") no-repeat right;
+}
+.top_menu li a{
+    display:block;
+    color:#fff;
+    font-size:14px;
+    text-decoration:none;
+    padding:0 12px;
+}
+.top_menu li a:hover,
+.top_menu li.me_active a{
+    height:53px;
+    line-height:53px;
+    background:#cc1940;
+}
+/*******header*/
+
+/*main*/
+.main{
+    width:1000px;
+    margin:0 auto;
+    padding-top:56px;
+    background:url("../images/main_bg.png") no-repeat center bottom;
+    z-index:100;
+    position:relative;
+}
+
+.slogan{
+    position:relative;
+    height:612px;
+    background:url("../images/slogan.png") no-repeat center -30px;
+}
+
+.btnbox{
+    width:575px;
+    text-align:center;
+    background:url("../images/btnbox.png") no-repeat center;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    margin-left:-285px;
+}
+/*我要报名*/
+.btn-reg{
+    display:inline-block;
+    padding:0 30px;
+    width:154px;
+    height:65px;
+    background:url("../images/btn-reg.png") no-repeat 30px 12px;
+}
+.btn-reg span{
+    background:#ffe42d;
+}
+
+/*btn*/
+.btn{
+    position: relative
+}
+.btn span{
+    position: absolute;
+    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+}
+
+.btn span.line-1{
+    left:0;
+    top:0;
+    width:0%;
+    height: 3px
+}
+.btn span.line-2{
+    right:0;
+    top:0;
+    width: 3px;
+    height:0%
+}
+.btn span.line-3{
+    right:0;
+    bottom:0;
+    width:0%;
+    height: 3px
+}
+.btn span.line-4{
+    left:0;
+    bottom:0;
+    width: 3px;
+    height:0%
+}
+.btn:hover span.line-1,
+.btn:hover span.line-3{
+    width:100%
+}
+.btn:hover span.line-2,
+.btn:hover span.line-4{
+    height:100%
+}
+
+
+.reg-step-item{
+    margin-top:30px;
+}
+.menu-sub li{
+    display:block;
+    float:left;
+    width:182px;
+    height:113px;
+    margin-right:15px;
+}
+.menu-sub li a{
+    display:block;
+    padding-top:11px;
+    height:102px;
+    line-height:90px;
+    color:#fff;
+    font-size:26px;
+    text-align:center;
+    text-decoration:none;
+    background:url("../images/sub_menu.png") no-repeat 0 0;
+}
+
+.menu-sub li a:hover,
+.menu-sub li.active a{
+    background-position:0 -113px;
+}
+#n5 a{line-height:30px;
+    padding-top:26px;
+    height:87px;
+}
+
+/*彩带*/
+.sha-con1{
+    display:block;
+    width:94px;
+    height:179px;
+    position:absolute;
+    top:43px;
+    left:-200px;
+    background:url("../images/shadow01.png") no-repeat 0 0;
+}
+.sha-con2{
+    display:block;
+    width:73px;
+    height:131px;
+    position:absolute;
+    top:43px;
+    right:320px;
+    background:url("../images/shadow02.png") no-repeat 0 0;
+}
+.sha-con3{
+    display:block;
+    width:144px;
+    height:174px;
+    position:absolute;
+    top:520px;
+    left:50%;
+    margin-left:-740px;
+    background:url("../images/shadow03.png") no-repeat 0 0;
+}
+.sha-con4{
+    display:block;
+    width:147px;
+    height:180px;
+    position:absolute;
+    top:650px;
+    left:50%;
+    margin-left:480px;
+    background:url("../images/shadow04.png") no-repeat 0 0;
+}
+/*彩带*/
+
+
+/*Footer*/
+.footer{
+    margin-top:20px;
+    margin-bottom:50px;
+}
+.footer p.copyright{
+    width:1000px;
+    font-size:14px;
+    color:#fff;
+    text-align:center;
+    margin:0 auto;
+}
+
+
+#errorie{
+    height:30px;
+    background:#FCF8E3;
+}
+#errorie div{
+    width:900px;
+    margin:0 auto;
+    line-height:26px;
+    color: orange;
+    font-size: 14px;
+}
+#errorie div a{
+    color:#459f79;
+    font-size: 14px;
+}
+#errorie div a:hover{
+    text-decoration:underline;
+}

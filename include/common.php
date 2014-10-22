@@ -30,6 +30,13 @@ class common {
 		return substr($guid, 1,36);
 	}
 
+    public static function isSetAndNotNullAndNotEmpty($args) {
+        if(!isset($args) || is_null($args) || empty($args)) {
+            return false;
+        }
+        return true;
+    }
+
     public static function checkLDAP($account,$password) {
         $LDAPHOST = 'LDAP://iflytek.com/';
         //$base_dn = 'OU=安徽中科大讯飞科技有限公司,DC=iflytek,DC=com';
@@ -50,9 +57,6 @@ class common {
         return $info['extension'];
     }
 
-    //参数说明：
-//file_dir:文件所在目录
-//file_name:文件名
     public static function download($file_dir,$file_name,$origi_name)
     {
         $file_dir = chop($file_dir);//去掉路径中多余的空格

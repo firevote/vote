@@ -83,7 +83,6 @@ class work_mgr extends spController
 
 
     function checkLDAP() {
-
         dump(common::checkLDAP('wjchang@iflytek.com','chang!2342'));
     }
 

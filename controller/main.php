@@ -4,7 +4,13 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_WARNING);
 
 class main extends spController
 {
+    //------------------  后台页面请求---------------------------------
     function index()
+    {
+        $this->display('home/index.html');
+    }
+
+    function login()
     {
         $this->display('login/login.html');
     }
@@ -51,4 +57,23 @@ class main extends spController
     function reward_item() {
         $this->display('index/reward_item.html');
     }
+
+    // ------------投票页面请求--------------------------
+    function vote_notice() {
+        $this->display('home/entries.html');
+    }
+
+    function vote_result() {
+        $this->display('home/results.html');
+    }
+
+    function work_vote() {
+        $this->display('home/shortlisted.html');
+    }
+
+    function dep_intro() {
+        $this->display('home/into.html');
+    }
+
+
 }
