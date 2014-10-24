@@ -51,7 +51,7 @@ class vote_mgr extends spController{
         }
 
         $ret = spClass('vote_votors')->findCount(array('votor'=>$currentSession['votor']));
-        if($ret >5) {
+        if($ret >VOTE_LIMIT) {
             $retArr['status']=5;
             $retArr['msg']='超出票数限制';
             echo json_encode($retArr);
@@ -167,7 +167,6 @@ class vote_mgr extends spController{
             $ret[$i]['email']='';
         }
 
-
         $retArr=array(
             'status'=>0,
             'msg'=>'ok',
@@ -231,8 +230,8 @@ class vote_mgr extends spController{
             'msg'=>'unknown'
         );
 
-//        $today = common::getCurrentTime();
-        $today = '2014-12-1';
+        $today = common::getCurrentTime();
+//        $today = '2014-12-1';
         $schme_item = spClass('competition')->find(array('cpt_index'=>5));
         $condition1 = common::compareDate($today,$schme_item['cpt_start_time']) == 2;
         if($condition1) {

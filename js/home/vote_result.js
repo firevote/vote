@@ -47,7 +47,7 @@ define(function(require,exports,module){
 
             if(retObj['status'] == 2) {
                 page_control.page_tip.show();
-                page_control.page_tip.text('赛果尚未揭晓，敬请期待...');
+                page_control.page_tip.text('敬请期待...');
             }
         });
     }
