@@ -81,11 +81,6 @@ class work_mgr extends spController
         echo json_encode($retArr);
     }
 
-
-    function checkLDAP() {
-        dump(common::checkLDAP('wjchang@iflytek.com','chang!2342'));
-    }
-
     function update_reward_item() {
         $postArgs = $_POST['postArgs'];
         $retInt = true;
@@ -180,8 +175,8 @@ class work_mgr extends spController
         if($res_item['type'] == 'zip') {
             $file_dir = UPLOAD_ZIPS_PATH;
         }
-
-        common::download($file_dir,$res_item['res_fullname'],$res_item['res_originame']);
+        //common::download($file_dir,$res_item['res_fullname'],$res_item['res_originame']);
+        common::download($file_dir,$res_item['res_fullname'],$res_item['res_fullname']);
     }
 
     function view_work_detail() {

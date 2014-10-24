@@ -1,0 +1,70 @@
+@charset 'UTF-8';
+
+
+.result-item{
+    margin-top:20px;
+}
+.re-tips{
+    margin-top:20px;
+    margin-right:20px;
+    padding-bottom:20px;
+    border-bottom:1px dashed #36304e;
+}
+.result-item h3{
+    height:61px;
+    text-indent:-999px;
+    overflow: hidden;
+    background:url("../images/result_h3.png") no-repeat center;
+
+}
+.re-tips p{
+    font-size:14px;
+    line-height:30px;
+    text-indent:30px;
+    color:#d4ccf1;
+}
+.bt{
+    font-size:14px;
+}
+.cr{
+    color:#f32955;
+}
+.prize-one,
+.prize-two,
+.prize-three
+{
+    margin-top:35px;
+}
+.prize-one p,
+.prize-two p,
+.prize-three p
+{
+    margin-top:10px;
+}
+
+.prize-one img,
+.prize-two img,
+.prize-three img
+{
+    width: 910px;
+    height: 247px;
+}
+
+.prize-h3{
+    font-size:27px;
+    color:#ffe42b;
+    line-height:35px;
+    margin:10px 0;
+}
+.pr-name{
+    margin-top:10px;
+}
+.pr-name span.sp1{
+    line-height:30px;
+    font-size:14px;
+    color:#ab9bfa;
+    font-weight:bold;
+}
+.pr-name span.sp2{
+    color:#543fbc;
+}

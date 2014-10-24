@@ -6,11 +6,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="template/home/static/common/css/base.css"/>
     <link rel="stylesheet" type="text/css" href="template/home/static/common/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="template/home/static/pop/css/pop.css"/>
     <link rel="stylesheet" type="text/css" href="template/home/static/shortlisted/css/shortlisted.css"/>
     <script src="js/common/jquery-1.11.0/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="template/home/static/common/js/bootstrap.js"></script>
     <script type="text/javascript" src="template/home/static/common/js/navbar.js"></script>
     <script type="text/javascript" src="template/home/static/common/js/index.js"></script>
+    <script type="text/javascript" src="js/sea-debug.js"></script>
     <!--[if lte IE 8]>
     <link rel="stylesheet" type="text/css" href="static/common/css/hack.css"/>
     <div class="ie7">
@@ -75,92 +77,14 @@
 
             <p class="star">投票须知：每个账号可以为5个作品分别投一票，一起来为你喜爱的作品加油吧！</p>
         </div>
-        <div class="product">
+        <div class="product" id="vote_list_panel" style="display: none;">
             <ul class="clearfix">
-                <li>
-                    <img src="template/home/static/shortlisted/images/img01.png"/>
-
-                    <div class="name">
-                        <h3>AWAKENING</h3>
-
-                        <p class="clearfix">
-                            <span class="fl">Design By 二二三</span>
-                            <span class="fr piao">12346<em>票</em></span>
-                        </p>
-                    </div>
-                    <a href="javascript:void(showw_dalog.first_birdd())" class="btn01">给他投票</a>
-                </li>
-                <li>
-                    <img src="template/home/static/shortlisted/images/img01.png"/>
-
-                    <div class="name">
-                        <h3>AWAKENING</h3>
-
-                        <p class="clearfix">
-                            <span class="fl">Design By 二二三</span>
-                            <span class="fr piao">12346<em>票</em></span>
-                        </p>
-                    </div>
-                    <a href="javascript:;" class="btn01">给他投票</a>
-                </li>
-                <li>
-                    <img src="template/home/static/shortlisted/images/img01.png"/>
-
-                    <div class="name">
-                        <h3>AWAKENING</h3>
-
-                        <p class="clearfix">
-                            <span class="fl">Design By 二二三</span>
-                            <span class="fr piao">12346<em>票</em></span>
-                        </p>
-                    </div>
-                    <a href="javascript:;" class="btn01">给他投票</a>
-                </li>
-                <li>
-                    <img src="template/home/static/shortlisted/images/img01.png"/>
-
-                    <div class="name">
-                        <h3>AWAKENING</h3>
-
-                        <p class="clearfix">
-                            <span class="fl">Design By 二二三</span>
-                            <span class="fr piao">12346<em>票</em></span>
-                        </p>
-                    </div>
-                    <a href="javascript:;" class="btn01">给他投票</a>
-                </li>
-                <li>
-                    <img src="template/home/static/shortlisted/images/img01.png"/>
-
-                    <div class="name">
-                        <h3>AWAKENING</h3>
-
-                        <p class="clearfix">
-                            <span class="fl">Design By 二二三</span>
-                            <span class="fr piao">12346<em>票</em></span>
-                        </p>
-                    </div>
-                    <a href="javascript:;" class="btn01">给他投票</a>
-                </li>
-                <li>
-                    <img src="template/home/static/shortlisted/images/img01.png"/>
-
-                    <div class="name">
-                        <h3>AWAKENING</h3>
-
-                        <p class="clearfix">
-                            <span class="fl">Design By 二二三</span>
-                            <span class="fr piao">12346<em>票</em></span>
-                        </p>
-                    </div>
-                    <a href="javascript:;" class="btn01">给他投票</a>
-                </li>
 
             </ul>
         </div>
-        <div class="next">
-            <a href="" class="up cur01">上一页</a>
-            <a href="" class="down">下一页</a>
+        <p id="page_tip" style="text-align:center;height:500px;line-height:500px;font-size:36px;color:#fff;display: none"></p>
+        <div class="next" id="work_list_pager" style="display: none">
+            <a id="more_page" href="javascript:;" class="down">更多</a>
         </div>
         <span id="indexg0" class="sha-con1"></span>
         <span id="indexg1" class="sha-con2"></span>
@@ -174,5 +98,73 @@
     <!--Footer-->
 </div>
 <!--Main-->
+
+<!--pop-login-->
+<div id="pop_login" style="display: none;">
+    <div class="pop_bg" style="position:fixed;z-index: 1000000;"></div>
+    <div class="pop" style="position:fixed;z-index: 10000001;">
+        <div class="login_box" >
+            <h3 class="pop_h3 clearfix">
+                <span class="fl">登录域账号</span>
+                <a id="btn_close" href="javascript:;" class="pop_closed fr" title="关闭">关闭</a>
+            </h3>
+            <div style="height: 35px;">
+                <p id="p_tip" class="pop_tips" style="display: none;"></p>
+            </div>
+            <ul class="log_reg">
+                <li><label>用户名：</label><input id="input_account" placeholder="域账号（不需要加@iflytek.com）"></li>
+                <li><label>密码：</label><input id="input_password" type="password" placeholder="密码"></li>
+            </ul>
+            <p class="btn_box">
+                <a id="btn_login_ok" href="javascript:;" class="btn-login">登录</a>
+                <a id="btn_login_clear" href="javascript:;" class="btn-channe">清空</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!--pop-login-->
+<!--pop-vote-succeed-->
+<div id="pop_vote_succeed" style="display: none;">
+    <div class="pop_bg" style="position:fixed;z-index: 1000000;"></div>
+    <div class="pop" style="position:fixed;z-index: 10000001;">
+        <div class="pop_img" >
+            <a id="vote_pop_close" href="javascript:;" title="关闭"><img src="template/home/static/pop/images/close.png"></a>
+        </div>
+    </div>
+</div>
+<!--pop-vote-succeed-->
+<!--pop-work-detail-->
+<div id="pop_work_detail" class="pop_box" style="display:none;">
+    <div class="pop_bg" style="position:fixed;z-index: 1000000;"></div>
+    <div class="pop" style="top:10%;position:fixed;z-index: 10000001;">
+        <div class="preview">
+            <div class="pop_h3 clearfix pop_h3_p">
+                <div class="pop_h3_l fl">
+                    <span class="pop_h3_l_name" id="work_detail_name"></span></br>
+                    <span>现有<span id="work_count"></span>票</span>
+                </div>
+                <a id="pop_work_close" href="javascript:;" class="pop_closed fr" title="关闭">关闭</a>
+            </div>
+            <div class="preview-wp">
+                <div class="preview-con">
+                    <p id="work_detail_des"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--pop-->
+
+<script type="text/javascript">
+    seajs.config({
+        alias : {
+        },
+        debug : 0
+        // 0: 只输出少量信息 1：输出大量信息 2：对已加载的文件不进行缓存
+    });
+    seajs.use('home/work_vote_list', function(work_vote_list){
+        work_vote_list.init();
+    });
+</script>
 </body>
 </html>

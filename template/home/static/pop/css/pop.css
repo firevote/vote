@@ -28,3 +28,131 @@
     right: 17px;
     top:47px;
 }
+
+/*login*/
+.login_box{
+    width:413px;
+    height:258px;
+    background:#796fa5;
+}
+.pop_h3{
+    height:54px;
+    line-height:54px;
+    background:#695f97;
+    padding:0 20px;
+}
+.pop_h3 span{
+    color:#fff;
+    font-size:18px;
+}
+.pop_closed{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    margin-top:20px;
+    text-indent:-99px;
+    overflow:hidden;
+    background:url("../images/pop_closed.png") no-repeat 0 0;
+}
+.pop_closed:hover{
+    background-position:0 -15px;
+}
+.pop_tips{
+    width:210px;
+    height:22px;
+    padding:0 5px;
+    line-height:22px;
+    color:#333;
+    margin-top:10px;
+    margin-left:120px;
+    background:#ffefc3;
+}
+.log_reg{
+    padding:0 20px;
+}
+.log_reg li{
+    margin:10px 0;
+}
+.log_reg li label{
+    display:block;
+    width:100px;
+    line-height:33px;
+    float:left;
+    text-align:right;
+    color:#fff;
+}
+.log_reg li input{
+    width:200px;
+    border:0;
+    height:23px;
+    padding:5px 10px;
+}
+
+.btn_box{
+    text-align:center;
+    margin-top:22px;
+}
+.btn_box a{
+    display:inline-block;
+    padding:0 20px;
+    color:#fff;
+    line-height:30px;
+    margin:0 10px;
+    text-decoration:none;
+}
+.btn-login{
+    background:#ce2148;
+}
+.btn-login:hover{
+    background:#e05171;
+}
+.btn-channe{
+    background:#4a427c;
+}
+.btn-channe:hover{
+    background:#69619d;
+}
+
+/*作品预览*/
+.preview{
+    width:534px;
+    background:#fff;
+}
+.pop_h3_p{
+    height:100px;
+}
+.pop_h3_l{
+    margin-top:20px;
+}
+.pop_h3_p span{
+    line-height:30px;
+    font-size:14px;
+}
+.pop_h3_p span.pop_h3_l_name{
+    color:#cfc4ff;
+    font-size:26px;
+}
+.preview-wp{
+    width:534px;
+    height:534px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.preview-con{
+    padding:20px;
+}
+.preview-con p{
+    color:#333;
+    line-height:30px;
+    margin:5px 0;
+}
+.preview-con p a{
+    margin-left:20px;
+    color:#ff9000;
+}
+.pr-tit{
+    font-size:20px;
+    color:#333;
+    text-align:center;
+    font-weight:bold;
+}

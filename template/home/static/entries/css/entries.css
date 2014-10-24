@@ -160,6 +160,7 @@
     display:none;
     width:12px;
     height:15px;
+    background:url("../images/step_on.png") no-repeat 0 0;
 }
 .reg-step li.active span i{
     display:block;

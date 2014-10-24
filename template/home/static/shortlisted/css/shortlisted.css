@@ -19,6 +19,12 @@
     text-align:center;
     margin-left:-15px;
 }
+
+.product img{
+    width:220px;
+    height:170px;
+}
+
 .product ul li{
     float: left;
     margin:15px 15px;

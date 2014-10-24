@@ -1,0 +1,33 @@
+/*--------------------pop----------------------------------*/
+
+.info-item{
+    margin-top:20px;
+}
+.info-item h3{
+    height:50px;
+    text-indent:-999px;
+    overflow:hidden;
+    background:url("../images/info_item_h3.png") no-repeat 0 0;
+}
+.info-item ul{
+    margin:50px 0;
+}
+.info-item ul li{
+    width:458px;
+    overflow:hidden;
+    float:left;
+    margin:20px 0 0 30px;
+}
+.info-item ul li span{
+    width:100%;
+    overflow:hidden;
+    float:left;
+}
+.info-item-n1{
+    font-size:24px;
+    color:#625799;
+}
+.info-item-n2 a{
+    font-size:16px;
+    color:#3e375e;
+}
