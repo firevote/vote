@@ -50,7 +50,7 @@ define(function(require,exports,module){
 
             if(retObj['status'] == 2) {
                 //page_control.page_tip.show();
-                page_control.page_tip.text('赛果揭晓 12.11');
+                page_control.page_tip.text('赛果揭晓 12.19');
             }
         });
     }

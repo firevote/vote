@@ -116,7 +116,7 @@ define(function(require,exports,module) {
                     disable_body_scrolling();
                 }
                 if(retObj['status'] == 0) {
-                    var post_args = {'work_id':$(_that).parent().children().first().val().trim()};
+                    var post_args = {'work_id':$(_that).parent().children().first().val()};
                     //console.log(post_args);
                     commUtils.doAjaxPost('./index.php?c=vote_mgr&a=do_vote',post_args).done(function(ret) {
                         //console.log(ret);
@@ -185,12 +185,12 @@ define(function(require,exports,module) {
 
             if(retObj['status'] == 2) {
                 page_control.page_tip.show();
-                page_control.page_tip.text('入围作品投票   11.28-12.4');
+                page_control.page_tip.text('入围作品投票   12.2-12.7');
             }
 
             if(retObj['status'] == 3) {
                 page_control.page_tip.show();
-                page_control.page_tip.text('入围作品投票   11.28-12.4');
+                page_control.page_tip.text('入围作品投票   12.2-12.7');
             }
         });
     }

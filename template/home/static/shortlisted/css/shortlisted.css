@@ -29,8 +29,10 @@
     margin-left:-15px;
 }
 .product ul li{
+	
     float: left;
     margin:15px 15px;
+	width:220px;
 }
 .product ul li img{
     width:220px;

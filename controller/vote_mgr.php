@@ -108,7 +108,7 @@ class vote_mgr extends spController{
     // todo
     function get_work_list() {
         $pageindex = $_POST['query_page'];
-        $pagesize = 12;
+        $pagesize = 20;
         $retArr = array(
             'status'=>-1,
             'msg'=>'unknown'
