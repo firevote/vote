@@ -8,7 +8,7 @@ define("SP_PATH",dirname(__FILE__).'/SpeedPHP');
 define("UPLOAD_IMAGES_PATH",dirname(__FILE__).'/upload/images/');
 define("UPLOAD_ZIPS_PATH",dirname(__FILE__).'/upload/zips/');
 define("INCLUDE_PATH",dirname(__FILE__).'/include/');
-define("VOTE_LIMIT",10);
+define("VOTE_LIMIT",8);
 
 // 应用程序配置
 $spConfig = array(

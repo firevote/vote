@@ -51,7 +51,7 @@ class vote_mgr extends spController{
         }
 
         $ret = spClass('vote_votors')->findCount(array('votor'=>$currentSession['votor']));
-        if($ret >VOTE_LIMIT) {
+        if($ret >= VOTE_LIMIT) {
             $retArr['status']=5;
             $retArr['msg']='超出票数限制';
             echo json_encode($retArr);

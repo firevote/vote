@@ -3,31 +3,38 @@
 .label{
     margin: 10px 0 34px 0;
 }
-.star{
-    background: url(../images/star.png) no-repeat left center;
+.label p{
+    font-size:14px;
+    font-family:"Microsoft YaHei";
     color: #b5afd3;
-    font-size: 13px;
-    padding-left: 38px;
-    margin-left: 248px;
-    height: 40px;
-    line-height: 40px;
+    text-align:center;
+    line-height:30px;
+}
+.star{
+    display:inline-block;
+    width:40px;
+    height:28px;
+    position: relative;
+    top:5px;
+    left: 0;
+    background: url(../images/star.png) no-repeat 0 0;
 }
 .label_img{
-    margin-left: 280px;
+    height:60px;
+    background:url("../images/img02.png") no-repeat center;
+    
 }
 .product{
     text-align:center;
     margin-left:-15px;
 }
-
-.product img{
-    width:220px;
-    height:170px;
-}
-
 .product ul li{
     float: left;
     margin:15px 15px;
+}
+.product ul li img{
+    width:220px;
+    height:170px;
 }
 .name p{
     width: 220px;
@@ -37,19 +44,24 @@
     overflow: hidden;
 }
 .name h3{
-    width: 220px;
+    width:160px;
     height: 27px;
     line-height: 27px;
     color:#ab9bfa;
     overflow: hidden;
     font-size: 16px;
     text-align:left;
+    overflow:hidden;
 }
 .name p span em{
     margin-left:5px;
 }
 .piao{
+    text-align:right;
+    width:60px;
+    line-height:27px;
     color:#fff;
+    overflow:hidden;
 }
 .btn01{
     background: url(../images/btn02.png) no-repeat 0 0;

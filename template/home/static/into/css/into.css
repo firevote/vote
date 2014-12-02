@@ -23,11 +23,7 @@
     overflow:hidden;
     float:left;
 }
-.info-item-n1{
+.info-item-n1 a{
     font-size:24px;
     color:#625799;
-}
-.info-item-n2 a{
-    font-size:16px;
-    color:#3e375e;
 }

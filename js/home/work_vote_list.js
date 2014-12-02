@@ -63,7 +63,7 @@ define(function(require,exports,module) {
         page_control.next_page.bind('click',function() {
             currentPage ++;
             getPagedWorks(currentPage).done(function(ret) {
-                console.log(ret);
+                //console.log(ret);
                 var retObj = JSON.parse(ret);
                 if(retObj['status'] == 0) {
                     var retObjData = retObj['data'];
@@ -87,7 +87,7 @@ define(function(require,exports,module) {
                 'password':login_panel.input_password.val().trim()
             };
             commUtils.doAjaxPost('./index.php?c=vote_mgr&a=reg_login',post_args).done(function (ret) {
-                console.log(ret);
+                //console.log(ret);
                 var retObj = JSON.parse(ret);
                 if(retObj['status'] == 0) {
                     clear_input();
@@ -109,7 +109,7 @@ define(function(require,exports,module) {
         page_control.work_list_panel.on({'click':function() {
             var _that = this;
             commUtils.doAjaxPost('./index.php?c=vote_mgr&a=check_session',null).done(function(ret) {
-                console.log(ret);
+                //console.log(ret);
                 var retObj = JSON.parse(ret);
                 if(retObj['status'] == 1) {
                     login_panel.main.show();
@@ -117,13 +117,13 @@ define(function(require,exports,module) {
                 }
                 if(retObj['status'] == 0) {
                     var post_args = {'work_id':$(_that).parent().children().first().val().trim()};
-                    console.log(post_args);
+                    //console.log(post_args);
                     commUtils.doAjaxPost('./index.php?c=vote_mgr&a=do_vote',post_args).done(function(ret) {
-                        console.log(ret);
+                        //console.log(ret);
                         var retObj = JSON.parse(ret);
                         if(retObj['status'] == 0) {
-                            var count = parseInt($(_that).parents().children('div').children('p').children('span').last().children().first().text().trim());
-                            $(_that).parents().children('div').children('p').children('span').last().children().first().text(count+1);
+                            var count = parseInt($(_that).parents().children('div').children('span').children().first().text().trim());
+                            $(_that).parents().children('div').children('span').children().first().text(count+1);
                             vote_pop_panel.main.show();
                             disable_body_scrolling();
                             setTimeout(function(){
@@ -145,7 +145,7 @@ define(function(require,exports,module) {
                 work_detail_panel.main.show();
                 disable_body_scrolling();
                 commUtils.doAjaxPost('./index.php?c=vote_mgr&a=get_work_detail',post_args).done(function(ret) {
-                    console.log(ret);
+                    //console.log(ret);
                     var retObj = JSON.parse(ret);
                     if(retObj['status'] == 0) {
                         work_detail_panel.work_detail_name.text(retObj['data']['work_title']);
@@ -163,7 +163,7 @@ define(function(require,exports,module) {
 
     function loadPage() {
         getPagedWorks(1).done(function(ret) {
-            console.log(ret);
+            //console.log(ret);
             var retObj = JSON.parse(ret);
             if(retObj['status'] == 0) {
                 var retObjData = retObj['data'];
@@ -185,12 +185,12 @@ define(function(require,exports,module) {
 
             if(retObj['status'] == 2) {
                 page_control.page_tip.show();
-                page_control.page_tip.text('入围作品投票   11.18-12.28');
+                page_control.page_tip.text('入围作品投票   11.28-12.4');
             }
 
             if(retObj['status'] == 3) {
                 page_control.page_tip.show();
-                page_control.page_tip.text('入围作品投票   11.18-12.28');
+                page_control.page_tip.text('入围作品投票   11.28-12.4');
             }
         });
     }
@@ -204,20 +204,19 @@ define(function(require,exports,module) {
     }
 
     function genItem(work_id,image_iid,work_title,work_name,count) {
-        page_control.work_list_panel.children().first().append(
-            '<li>'+
-                '<input type="hidden" value="'+work_id+'"/>'+
-                '<img class="vote_see_detail" src="./index.php?c=work_mgr&a=download_file&res_id='+image_iid+'"/>'+
-                '<div class="name">'+
-                    '<h3>'+work_title+'</h3>'+
-                    '<p class="clearfix">'+
-                    '<span class="fl">'+work_name+'</span>'+
+        var dom = '<li>'+ '<input type="hidden" value="'+work_id+'"/>';
+        if(image_iid == "") {
+            dom+='<img class="vote_see_detail" src="./template/home/static/shortlisted/images/img01.png"/>';
+        } else {
+            dom+='<img class="vote_see_detail" src="./index.php?c=work_mgr&a=download_file&res_id='+image_iid+'"/>';
+        }
+        dom +=  '<div class="name clearfix">'+
+                    '<h3 class="fl">'+work_title+'</h3>'+
                     '<span class="fr piao"><span>'+count+'</span><em>票</em></span>'+
-                    '</p>'+
                 '</div>'+
                 '<a href="javascript:;" class="btn01 vote_to_him">给他投票</a>'+
-            '</li>'
-            );
+                '</li>';
+        page_control.work_list_panel.children().first().append(dom);
     }
 
     function disable_body_scrolling() {

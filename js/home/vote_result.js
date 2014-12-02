@@ -17,15 +17,18 @@ define(function(require,exports,module){
 
     function getResult() {
         commUtils.doAjaxPost('./index.php?c=vote_mgr&a=get_vote_result',null).done(function(ret) {
-            console.log(ret);
+            //console.log(ret);
             var retObj = JSON.parse(ret);
             if(retObj['status'] == 0) {
                 var retObjData = retObj['data'];
                 if(retObjData.length == 0) {
-                    page_control.page_tip.show();
+                    //page_control.page_tip.show();
                     page_control.page_tip.text('暂无结果...');
+					return;
                 }
-
+				
+				page_control.page_tip.hide()
+				
                 for(var i=0;i<retObjData.length;i++) {
                     if(retObjData[i]['reward_item_index'] == 1) {
                         page_control.result_reg.show();
@@ -46,15 +49,21 @@ define(function(require,exports,module){
             }
 
             if(retObj['status'] == 2) {
-                page_control.page_tip.show();
-                page_control.page_tip.text('敬请期待...');
+                //page_control.page_tip.show();
+                page_control.page_tip.text('赛果揭晓 12.11');
             }
         });
     }
 
     function appendRewardItem(dom,image_id,work_title) {
-        dom.append('<p><img src="./index.php?c=work_mgr&a=download_file&res_id='+image_id+'" alt="创意之星-Apple iPhone6 plus"/></p>'+
-        '<p class="pr-name"><span class="sp1">'+work_title+'</span></p>');
+        var doc = '';
+        if(image_id == "") {
+            doc+='<p><img src="././template/home/static/results/images/test_prize_one.png" alt="创意之星-Apple iPhone6 plus"/></p>';
+        }else {
+            doc+='<p><img src="./index.php?c=work_mgr&a=download_file&res_id='+image_id+'" alt="创意之星-Apple iPhone6 plus"/></p>';
+        }
+        doc += '<p class="pr-name"><span class="sp1">'+work_title+'</span></p>'
+        dom.append(doc);
     }
 
     exports.init = init;

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="template/home/static/common/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="template/home/static/pop/css/pop.css"/>
     <link rel="stylesheet" type="text/css" href="template/home/static/shortlisted/css/shortlisted.css"/>
+	<script src="js/json2.min.js"></script>
     <script src="js/common/jquery-1.11.0/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="template/home/static/common/js/bootstrap.js"></script>
     <script type="text/javascript" src="template/home/static/common/js/navbar.js"></script>
@@ -30,19 +31,19 @@
         <div class="top_menu fr">
             <ul>
                 <li >
-                    <a href="./index.php?c=main&a=index" title="首页">首页</a>
+                    <a href="./index.php?c=main&a=index#content" title="首页">首页</a>
                 </li>
                 <li>
-                    <a href="./index.php?c=main&a=vote_notice" title="参赛须知">参赛须知</a>
+                    <a href="./index.php?c=main&a=vote_notice#content" title="参赛须知">参赛须知</a>
                 </li>
                 <li class="me_active">
-                    <a href="./index.php?c=main&a=work_vote" title="入围作品投票">入围作品投票</a>
+                    <a href="./index.php?c=main&a=work_vote#content" title="入围作品投票">入围作品投票</a>
                 </li>
                 <li>
-                    <a href="./index.php?c=main&a=vote_result" title="赛果揭晓">赛果揭晓</a>
+                    <a href="./index.php?c=main&a=vote_result#content" title="赛果揭晓">赛果揭晓</a>
                 </li>
                 <li>
-                    <a href="./index.php?c=main&a=dep_intro" title="畅言教具产品介绍">畅言教育产品介绍</a>
+                    <a href="./index.php?c=main&a=dep_intro#content" title="畅言教具产品介绍">畅言教育产品介绍</a>
                 </li>
             </ul>
         </div>
@@ -54,7 +55,7 @@
 <div class="main">
     <div class="slogan">
         <div class="btnbox">
-            <a class="btn btn-reg" href="javascript:;" title="报名-点我、点我">
+            <a class="btn btn-reg" href="./index.php?c=main&a=vote_notice#content" name="content" title="报名-点我、点我">
                 <span class="line-1"></span>
                 <span class="line-2"></span>
                 <span class="line-3"></span>
@@ -64,25 +65,26 @@
     </div>
     <div class="reg-step-item">
         <ul class="menu-sub clearfix">
-            <li  id="n1"><a href="./index.php?c=main&a=index" title="首页">首页</a></li>
-            <li id="n2"><a href="./index.php?c=main&a=vote_notice" title="参赛须知">参赛须知</a></li>
-            <li class="active" id="n3"><a href="./index.php?c=main&a=work_vote" title="入围作品投票">入围作品投票</a></li>
-            <li id="n4"><a href="./index.php?c=main&a=vote_result" title="赛果揭晓">赛果揭晓</a></li>
-            <li id="n5"><a href="./index.php?c=main&a=dep_intro" title="畅言教具产品介绍">畅言教育</br>产品介绍</a></li>
+            <li  id="n1"><a href="./index.php?c=main&a=index#content" title="首页">首页</a></li>
+            <li id="n2"><a href="./index.php?c=main&a=vote_notice#content" title="参赛须知">参赛须知</a></li>
+            <li class="active" id="n3"><a href="./index.php?c=main&a=work_vote#content" title="入围作品投票">入围作品投票</a></li>
+            <li id="n4"><a href="./index.php?c=main&a=vote_result#content" title="赛果揭晓">赛果揭晓</a></li>
+            <li id="n5"><a href="./index.php?c=main&a=dep_intro#content" title="畅言教具产品介绍">畅言教育</br>产品介绍</a></li>
         </ul>
     </div>
     <div class="contain">
         <div class="label">
-            <span class="label_img"><img src="template/home/static/shortlisted/images/img02.png"></span>
+            <h3 class="label_img"></h3>
 
-            <p class="star">投票须知：每个账号可以为5个作品分别投一票，一起来为你喜爱的作品加油吧！</p>
+            <p><i class="star"></i>投票须知：每个账号可以为5个作品分别投一票，一起来为你喜爱的作品加油吧！</p>
+            <p>11月28日至12月4日入围作品投票</p>
         </div>
         <div class="product" id="vote_list_panel" style="display: none;">
             <ul class="clearfix">
 
             </ul>
         </div>
-        <p id="page_tip" style="text-align:center;height:500px;line-height:500px;font-size:36px;color:#fff;display: none"></p>
+        <p id="page_tip" style="display: none;"></p>
         <div class="next" id="work_list_pager" style="display: none">
             <a id="more_page" href="javascript:;" class="down">更多</a>
         </div>
@@ -93,7 +95,7 @@
     </div>
     <!--Footer-->
     <div class="footer">
-        <p class="copyright">主办方：科大讯飞 教育产品事业部 协办方：教育文化建设小组</p>
+        <p class="copyright">主办方:&nbsp;&nbsp;教育产品事业部&nbsp;&nbsp;&nbsp;&nbsp;总裁办</p>
     </div>
     <!--Footer-->
 </div>

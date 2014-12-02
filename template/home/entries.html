@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="template/home/static/common/css/base.css"/>
     <link rel="stylesheet" type="text/css" href="template/home/static/common/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="template/home/static/entries/css/entries.css"/>
+	<script src="js/json2.min.js"></script>
     <script src="js/common/jquery-1.11.0/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="template/home/static/common/js/bootstrap.js"></script>
     <script type="text/javascript" src="template/home/static/common/js/navbar.js"></script>
@@ -28,19 +29,19 @@
         <div class="top_menu fr">
             <ul>
                 <li >
-                    <a href="./index.php?c=main&a=index" title="首页">首页</a>
+                    <a href="./index.php?c=main&a=index#content" title="首页">首页</a>
                 </li>
                 <li class="me_active">
-                    <a href="./index.php?c=main&a=vote_notice" title="参赛须知">参赛须知</a>
+                    <a href="./index.php?c=main&a=vote_notice#content" title="参赛须知">参赛须知</a>
                 </li>
                 <li>
-                    <a href="./index.php?c=main&a=work_vote" title="入围作品投票">入围作品投票</a>
+                    <a href="./index.php?c=main&a=work_vote#content" title="入围作品投票">入围作品投票</a>
                 </li>
                 <li>
-                    <a href="./index.php?c=main&a=vote_result" title="赛果揭晓">赛果揭晓</a>
+                    <a href="./index.php?c=main&a=vote_result#content" title="赛果揭晓">赛果揭晓</a>
                 </li>
                 <li>
-                    <a href="./index.php?c=main&a=dep_intro" title="畅言教具产品介绍">畅言教育产品介绍</a>
+                    <a href="./index.php?c=main&a=dep_intro#content" title="畅言教具产品介绍">畅言教育产品介绍</a>
                 </li>
             </ul>
         </div>
@@ -52,7 +53,7 @@
 <div class="main">
     <div class="slogan">
         <div class="btnbox">
-            <a class="btn btn-reg" href="javascript:;" title="报名-点我、点我">
+            <a class="btn btn-reg" href="./index.php?c=main&a=vote_notice#content" name="content" title="报名-点我、点我">
                 <span class="line-1"></span>
                 <span class="line-2"></span>
                 <span class="line-3"></span>
@@ -62,11 +63,11 @@
     </div>
     <div class="reg-step-item">
         <ul class="menu-sub clearfix">
-            <li id="n1"><a href="./index.php?c=main&a=index" title="首页">首页</a></li>
-            <li class="active"  id="n2"><a href="./index.php?c=main&a=vote_notice" title="参赛须知">参赛须知</a></li>
-            <li id="n3"><a href="./index.php?c=main&a=work_vote" title="入围作品投票">入围作品投票</a></li>
-            <li id="n4"><a href="./index.php?c=main&a=vote_result" title="赛果揭晓">赛果揭晓</a></li>
-            <li id="n5"><a href="./index.php?c=main&a=dep_intro" title="畅言教具产品介绍">畅言教育</br>产品介绍</a></li>
+            <li id="n1"><a href="./index.php?c=main&a=index#content" title="首页">首页</a></li>
+            <li class="active"  id="n2"><a href="./index.php?c=main&a=vote_notice#content" title="参赛须知">参赛须知</a></li>
+            <li id="n3"><a href="./index.php?c=main&a=work_vote#content" title="入围作品投票">入围作品投票</a></li>
+            <li id="n4"><a href="./index.php?c=main&a=vote_result#content" title="赛果揭晓">赛果揭晓</a></li>
+            <li id="n5"><a href="./index.php?c=main&a=dep_intro#content" title="畅言教具产品介绍">畅言教育</br>产品介绍</a></li>
         </ul>
     </div>
     <div class="contain">
@@ -86,10 +87,10 @@
         <div class="ask">
             <span class="title">作品要求</span>
 
-            <p>1、参赛者提交作品须为原创作品；<br/>
-                2、产品类型为教育信息化产品，可以是软硬件产品，也可以是一种运营方案或商业模式；<br/>
-                3、产品的使用者可以是教师、学生、家长或教育管理者，产品的应用场景不限，既可以与工作相关也可以与课余生活相关；<br/>
-                4、可从产品的功能、设计、应用场景、商业模式等方面进行创新；<br/>
+            <p>1、参赛者提交作品须为原创作品。<br/>
+                2、产品类型为教育信息化产品，可以是软硬件产品，也可以是一种运营方案或商业模式。<br/>
+                3、产品的使用者可以是教师、学生、家长或教育管理者，产品的应用场景不限。<br/>
+                4、可从产品的概念、功能、设计、商业模式等方面进行创新。<br/>
                 5、作品需提交一份1000字以内的文字介绍，并可配有图片、PPT等附件加以说明。</p>
         </div>
         <div class="submit">
@@ -156,7 +157,7 @@
                 <strong><span>银奖1名</span>&nbsp;&nbsp;&nbsp;&nbsp; Apple iPhone6<br/> </strong>
                 <strong><span>铜奖3名</span>&nbsp;&nbsp;&nbsp;&nbsp; Apple iPad mini<br/> </strong>
                 <strong><span>人气奖1名</span>&nbsp;&nbsp;&nbsp;&nbsp; Apple iPad mini<br/> </strong>
-                教育产品创意库入围作品 一经采用，即予奖励。即在教育产品中得到实际使用后，给予现金奖励。获奖作品不再重复奖励。<font> 500元 现金大奖</font>
+                <strong><span>教育产品创意库入围作品</span>&nbsp;&nbsp;&nbsp;&nbsp;一经采用，即予奖励。即在教育产品中得到实际使用后，给予现金奖励。获奖作品不再重复奖励。</strong>
             </p>
         </div>
         <div class="data">
@@ -194,9 +195,7 @@
         <em></em>
         <label>其它事项</label>
 
-        <p>1、所有参赛者同意：对于参赛作品，主办方有权以各种形式或按主办方的需求对参赛作品自行适当修改后，免费进行使用；主办方的前述使用及修改期
-            限不受限制，同时，参赛者不可再将前述入围网络投票环节的参赛作品，以任何形式授权他方使用。<br/>
-            2、该比赛由科大讯飞教育产品事业部主办，主办方有权决定比赛时间、流程等，并保留对上述规则进行解释的权利。</p>
+        <p>1、所有参赛者同意：对于参赛作品，主办方有权以各种形式或按主办方的需求对参赛作品自行适当修改后，免费进行使用；主办方的上<br/><span style="width:25px;display:inline-block;"></span>述使用及修改期限不受限制，同时，参赛者不可再将前述入围网络投票环节的参赛作品，以任何形式授权他方使用。<br/>2、该比赛由科大讯飞教育产品事业部主办，主办方有权决定比赛时间、流程等，并保留对上述规则进行解释的权利。</p>
     </div>
     <div class="index-tags">
         <p class="star"></p>
@@ -209,7 +208,7 @@
 <!--Main-->
 <!--Footer-->
 <div class="footer">
-    <p class="copyright">主办方：科大讯飞 教育产品事业部 协办方：教育文化建设小组</p>
+    <p class="copyright">主办方:&nbsp;&nbsp;教育产品事业部&nbsp;&nbsp;&nbsp;&nbsp;总裁办</p>
 </div>
 <!--Footer-->
 </div>
@@ -247,7 +246,7 @@
             }
 
             $('.reg_schema_step_'+currentIndex).addClass('active');
-            console.log(currentIndex);
+            //console.log(currentIndex);
         });
     });
 </script>

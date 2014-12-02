@@ -30,6 +30,10 @@
     $('body').on('mousemove',function(e){
         _index3.css('right',_indexdefault3.x+(e.pageX*_ff));
         _index3.css('top',_indexdefault3.y+(e.pageY*_ff));
-    })
+    });
+
+    setTimeout(function() {
+        $('.ie7').hide();
+    },3000);
 
 });
